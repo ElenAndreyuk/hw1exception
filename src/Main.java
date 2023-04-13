@@ -94,10 +94,13 @@ public class Main {
 
     public static int[] quotientOfNumber(int[] array1, int[] array2) throws Exception{
         if(array1.length != array2.length){
-            throw new RuntimeException("\"Длина массивов отличается, код ошибки -1\"");
+            throw new RuntimeException("\"Длина массивов отличается, код ошибки -1");
         }
         int[] arrayResult = new int[array1.length];
         for (int i = 0; i < array1.length; i++) {
+            if (array2[i] == 0){
+                throw new RuntimeException("на ноль делить нельзя, код ошибки -2");
+            }
             arrayResult[i] = array1[i] / array2[i];
         }
         return arrayResult;
